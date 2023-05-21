@@ -1,6 +1,6 @@
 import UIKit
 
-struct FavoriteModel: Codable {
+struct FavoriteModel: Codable, Equatable {
     let imageData: Data
     let text: String
     

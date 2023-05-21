@@ -8,7 +8,7 @@ final class FavoriteViewController: UIViewController {
     
     //MARK: - Private properties
             
-    private let tableView: UITableView = {
+    private let favoriteTableView: UITableView = {
         let view = UITableView()
         view.backgroundColor = .clear
         view.register(FavoriteCustomTableViewCell.self, forCellReuseIdentifier: FavoriteCustomTableViewCell.identifier)
@@ -29,7 +29,7 @@ final class FavoriteViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        favoriteTableView.reloadData()
     }
     
     //MARK: - Private methods
@@ -40,21 +40,21 @@ final class FavoriteViewController: UIViewController {
     }
     
     private func setupDelegate() {
-        tableView.delegate = self
-        tableView.dataSource = self
+        favoriteTableView.delegate = self
+        favoriteTableView.dataSource = self
     }
     
     //MARK: - Setup layout
     
     private func setupLayout() {
         view.backgroundColor = .white
-        view.addSubview(tableView)
+        view.addSubview(favoriteTableView)
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            favoriteTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            favoriteTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            favoriteTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            favoriteTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
     }
 }

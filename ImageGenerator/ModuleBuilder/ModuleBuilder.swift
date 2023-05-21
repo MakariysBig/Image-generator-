@@ -3,7 +3,8 @@ import UIKit
 final class ModuleBuilder {
     func createMainModule() -> UIViewController {
         let VC = MainViewController()
-        let presenter = MainPresenter(VC: VC)
+        let networkManager = NetworkManager()
+        let presenter = MainPresenter(VC: VC, networkManager: networkManager)
         VC.presenter = presenter
         
         return VC

@@ -22,7 +22,6 @@ final class FavoriteCustomTableViewCell: UITableViewCell {
     private let generatedTextLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-
         return label
     }()
     
