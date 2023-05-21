@@ -13,6 +13,15 @@
 		AB543E1B2A16585300788245 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB543E192A16585300788245 /* LaunchScreen.storyboard */; };
 		AB543E242A165B4E00788245 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB543E232A165B4E00788245 /* TabBarController.swift */; };
 		AB543E262A1669C000788245 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB543E252A1669C000788245 /* FavoriteViewController.swift */; };
+		AB543E2A2A167BAA00788245 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB543E292A167BAA00788245 /* MainPresenter.swift */; };
+		AB543E362A16848F00788245 /* FavoriteCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB543E352A16848F00788245 /* FavoriteCustomTableViewCell.swift */; };
+		AB543E3D2A16891800788245 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB543E3C2A16891800788245 /* UserDefaultsManager.swift */; };
+		AB543E3F2A16894900788245 /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB543E3E2A16894900788245 /* FavoriteModel.swift */; };
+		AB543E4B2A17896300788245 /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB543E4A2A17896300788245 /* MainProtocols.swift */; };
+		AB543E4D2A17B62B00788245 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB543E4C2A17B62B00788245 /* ModuleBuilder.swift */; };
+		AB543E4F2A17BC9700788245 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB543E4E2A17BC9700788245 /* NetworkManager.swift */; };
+		AB543E512A17C2EC00788245 /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB543E502A17C2EC00788245 /* FavoritePresenter.swift */; };
+		AB543E532A17C2F800788245 /* FavoriteProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB543E522A17C2F700788245 /* FavoriteProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +33,15 @@
 		AB543E1C2A16585300788245 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB543E232A165B4E00788245 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		AB543E252A1669C000788245 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		AB543E292A167BAA00788245 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		AB543E352A16848F00788245 /* FavoriteCustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCustomTableViewCell.swift; sourceTree = "<group>"; };
+		AB543E3C2A16891800788245 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		AB543E3E2A16894900788245 /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
+		AB543E4A2A17896300788245 /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
+		AB543E4C2A17B62B00788245 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		AB543E4E2A17BC9700788245 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AB543E502A17C2EC00788245 /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
+		AB543E522A17C2F700788245 /* FavoriteProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +74,12 @@
 		AB543E0D2A16585200788245 /* ImageGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				AB543E0E2A16585200788245 /* AppDelegate.swift */,
-				AB543E122A16585200788245 /* MainViewController.swift */,
-				AB543E252A1669C000788245 /* FavoriteViewController.swift */,
+				AB543E572A18C6F100788245 /* NetworkLayer */,
+				AB543E492A17891800788245 /* Delegate */,
+				AB543E552A17DB5200788245 /* ModuleBuilder */,
 				AB543E222A165B4E00788245 /* TabBar */,
+				AB543E282A167B8F00788245 /* MainModule */,
+				AB543E302A16845F00788245 /* FavoriteModule */,
 				AB543E272A1674AA00788245 /* SupportFiles */,
 			);
 			path = ImageGenerator;
@@ -76,11 +96,122 @@
 		AB543E272A1674AA00788245 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				AB543E3C2A16891800788245 /* UserDefaultsManager.swift */,
 				AB543E172A16585300788245 /* Assets.xcassets */,
 				AB543E192A16585300788245 /* LaunchScreen.storyboard */,
 				AB543E1C2A16585300788245 /* Info.plist */,
 			);
 			name = SupportFiles;
+			sourceTree = "<group>";
+		};
+		AB543E282A167B8F00788245 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				AB543E2E2A167BD900788245 /* View */,
+				AB543E2F2A167BDF00788245 /* Presenter */,
+				AB543E542A17C37600788245 /* Protocol */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		AB543E2E2A167BD900788245 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB543E122A16585200788245 /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB543E2F2A167BDF00788245 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB543E292A167BAA00788245 /* MainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AB543E302A16845F00788245 /* FavoriteModule */ = {
+			isa = PBXGroup;
+			children = (
+				AB543E332A16847800788245 /* Model */,
+				AB543E312A16846900788245 /* View */,
+				AB543E322A16847100788245 /* Presenter */,
+				AB543E562A18C0C000788245 /* Protocol */,
+				AB543E342A16848100788245 /* CustomCell */,
+			);
+			path = FavoriteModule;
+			sourceTree = "<group>";
+		};
+		AB543E312A16846900788245 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB543E252A1669C000788245 /* FavoriteViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB543E322A16847100788245 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB543E502A17C2EC00788245 /* FavoritePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AB543E332A16847800788245 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB543E3E2A16894900788245 /* FavoriteModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB543E342A16848100788245 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				AB543E352A16848F00788245 /* FavoriteCustomTableViewCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		AB543E492A17891800788245 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				AB543E0E2A16585200788245 /* AppDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		AB543E542A17C37600788245 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				AB543E4A2A17896300788245 /* MainProtocols.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		AB543E552A17DB5200788245 /* ModuleBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				AB543E4C2A17B62B00788245 /* ModuleBuilder.swift */,
+			);
+			path = ModuleBuilder;
+			sourceTree = "<group>";
+		};
+		AB543E562A18C0C000788245 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				AB543E522A17C2F700788245 /* FavoriteProtocols.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		AB543E572A18C6F100788245 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				AB543E4E2A17BC9700788245 /* NetworkManager.swift */,
+			);
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +230,8 @@
 			dependencies = (
 			);
 			name = ImageGenerator;
+			packageProductDependencies = (
+			);
 			productName = ImageGenerator;
 			productReference = AB543E0B2A16585200788245 /* ImageGenerator.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +260,8 @@
 				Base,
 			);
 			mainGroup = AB543E022A16585100788245;
+			packageReferences = (
+			);
 			productRefGroup = AB543E0C2A16585200788245 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -153,8 +288,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB543E532A17C2F800788245 /* FavoriteProtocols.swift in Sources */,
+				AB543E2A2A167BAA00788245 /* MainPresenter.swift in Sources */,
+				AB543E3F2A16894900788245 /* FavoriteModel.swift in Sources */,
 				AB543E132A16585200788245 /* MainViewController.swift in Sources */,
+				AB543E512A17C2EC00788245 /* FavoritePresenter.swift in Sources */,
 				AB543E242A165B4E00788245 /* TabBarController.swift in Sources */,
+				AB543E4B2A17896300788245 /* MainProtocols.swift in Sources */,
+				AB543E362A16848F00788245 /* FavoriteCustomTableViewCell.swift in Sources */,
+				AB543E3D2A16891800788245 /* UserDefaultsManager.swift in Sources */,
+				AB543E4F2A17BC9700788245 /* NetworkManager.swift in Sources */,
+				AB543E4D2A17B62B00788245 /* ModuleBuilder.swift in Sources */,
 				AB543E262A1669C000788245 /* FavoriteViewController.swift in Sources */,
 				AB543E0F2A16585200788245 /* AppDelegate.swift in Sources */,
 			);
