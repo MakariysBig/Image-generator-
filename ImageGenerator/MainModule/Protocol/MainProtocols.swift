@@ -10,8 +10,9 @@ protocol MainViewProtocol: AnyObject {
 //MARK: - Presenter
 
 protocol MainPresenterProtocol {
-    init(VC: MainViewProtocol)
+    init(VC: MainViewProtocol, networkManager: NetworkProtocol)
     
     func generateImage(with text: String?)
     func addToFavorite(with image: UIImage, text: String)
+    func checkIfTheTextSame(oldText: String?, newText: String?) -> Bool
 }

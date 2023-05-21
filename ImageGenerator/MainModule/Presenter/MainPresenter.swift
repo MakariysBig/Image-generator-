@@ -1,19 +1,19 @@
 import UIKit
 
 final class MainPresenter: MainPresenterProtocol {
-  
     //MARK: - Private properties
     
     private let limit = 3
-    private let networkLayer = NetworkManager()
+    private let networkManager: NetworkProtocol?
     
     private var lastGenerate: String?
     private weak var VC: MainViewProtocol?
 
     //MARK: - Initialise
     
-    init(VC: MainViewProtocol) {
+    init(VC: MainViewProtocol, networkManager: NetworkProtocol) {
         self.VC = VC
+        self.networkManager = networkManager
     }
     
     //MARK: - Internal methods
@@ -21,9 +21,10 @@ final class MainPresenter: MainPresenterProtocol {
     func generateImage(with text: String?) {
         let newText = text?.replacingOccurrences(of: " ", with: "+")
         
-        if lastGenerate != newText {
+        if checkIfTheTextSame(oldText: lastGenerate, newText: newText) {
             lastGenerate = newText
-            networkLayer.fetchImage(text: newText ?? "") { result in
+            networkManager?.fetchImage(text: newText ?? "") { [weak self] result in
+                guard let self = self else { return }
                 switch result {
                 case .success(let image):
                     self.VC?.updateImage(with: image)
@@ -41,5 +42,9 @@ final class MainPresenter: MainPresenterProtocol {
         if UserDefaultsManager.courseArray.count > limit {
             UserDefaultsManager.courseArray.removeLast()
         }
+    }
+    
+    func checkIfTheTextSame(oldText: String?, newText: String?) -> Bool {
+        return oldText != newText
     }
 }

@@ -22,7 +22,27 @@
 		AB543E4F2A17BC9700788245 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB543E4E2A17BC9700788245 /* NetworkManager.swift */; };
 		AB543E512A17C2EC00788245 /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB543E502A17C2EC00788245 /* FavoritePresenter.swift */; };
 		AB543E532A17C2F800788245 /* FavoriteProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB543E522A17C2F700788245 /* FavoriteProtocols.swift */; };
+		AB543E662A1A1FD000788245 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB543E652A1A1FD000788245 /* MainPresenterTests.swift */; };
+		AB543E742A1A558600788245 /* ImageGeneratorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB543E732A1A558600788245 /* ImageGeneratorUITests.swift */; };
+		AB543E762A1A558600788245 /* ImageGeneratorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB543E752A1A558600788245 /* ImageGeneratorUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AB543E602A1A1E2700788245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB543E032A16585100788245 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB543E0A2A16585100788245;
+			remoteInfo = ImageGenerator;
+		};
+		AB543E772A1A558600788245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB543E032A16585100788245 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB543E0A2A16585100788245;
+			remoteInfo = ImageGenerator;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AB543E0B2A16585200788245 /* ImageGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,10 +62,29 @@
 		AB543E4E2A17BC9700788245 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		AB543E502A17C2EC00788245 /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 		AB543E522A17C2F700788245 /* FavoriteProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProtocols.swift; sourceTree = "<group>"; };
+		AB543E5C2A1A1E2700788245 /* ImageGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB543E652A1A1FD000788245 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
+		AB543E712A1A558500788245 /* ImageGeneratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageGeneratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB543E732A1A558600788245 /* ImageGeneratorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGeneratorUITests.swift; sourceTree = "<group>"; };
+		AB543E752A1A558600788245 /* ImageGeneratorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGeneratorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AB543E082A16585100788245 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB543E592A1A1E2700788245 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB543E6E2A1A558500788245 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -59,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				AB543E0D2A16585200788245 /* ImageGenerator */,
+				AB543E5D2A1A1E2700788245 /* ImageGeneratorTests */,
+				AB543E722A1A558600788245 /* ImageGeneratorUITests */,
 				AB543E0C2A16585200788245 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				AB543E0B2A16585200788245 /* ImageGenerator.app */,
+				AB543E5C2A1A1E2700788245 /* ImageGeneratorTests.xctest */,
+				AB543E712A1A558500788245 /* ImageGeneratorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,6 +257,39 @@
 			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
+		AB543E5D2A1A1E2700788245 /* ImageGeneratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				AB543E672A1A1FDF00788245 /* MainModule */,
+			);
+			path = ImageGeneratorTests;
+			sourceTree = "<group>";
+		};
+		AB543E672A1A1FDF00788245 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				AB543E682A1A1FE900788245 /* Presenter */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		AB543E682A1A1FE900788245 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB543E652A1A1FD000788245 /* MainPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AB543E722A1A558600788245 /* ImageGeneratorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AB543E732A1A558600788245 /* ImageGeneratorUITests.swift */,
+				AB543E752A1A558600788245 /* ImageGeneratorUITestsLaunchTests.swift */,
+			);
+			path = ImageGeneratorUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -236,6 +312,42 @@
 			productReference = AB543E0B2A16585200788245 /* ImageGenerator.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AB543E5B2A1A1E2700788245 /* ImageGeneratorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB543E622A1A1E2700788245 /* Build configuration list for PBXNativeTarget "ImageGeneratorTests" */;
+			buildPhases = (
+				AB543E582A1A1E2700788245 /* Sources */,
+				AB543E592A1A1E2700788245 /* Frameworks */,
+				AB543E5A2A1A1E2700788245 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB543E612A1A1E2700788245 /* PBXTargetDependency */,
+			);
+			name = ImageGeneratorTests;
+			productName = ImageGeneratorTests;
+			productReference = AB543E5C2A1A1E2700788245 /* ImageGeneratorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AB543E702A1A558500788245 /* ImageGeneratorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB543E792A1A558600788245 /* Build configuration list for PBXNativeTarget "ImageGeneratorUITests" */;
+			buildPhases = (
+				AB543E6D2A1A558500788245 /* Sources */,
+				AB543E6E2A1A558500788245 /* Frameworks */,
+				AB543E6F2A1A558500788245 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB543E782A1A558600788245 /* PBXTargetDependency */,
+			);
+			name = ImageGeneratorUITests;
+			productName = ImageGeneratorUITests;
+			productReference = AB543E712A1A558500788245 /* ImageGeneratorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -248,6 +360,14 @@
 				TargetAttributes = {
 					AB543E0A2A16585100788245 = {
 						CreatedOnToolsVersion = 14.3;
+					};
+					AB543E5B2A1A1E2700788245 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = AB543E0A2A16585100788245;
+					};
+					AB543E702A1A558500788245 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = AB543E0A2A16585100788245;
 					};
 				};
 			};
@@ -267,6 +387,8 @@
 			projectRoot = "";
 			targets = (
 				AB543E0A2A16585100788245 /* ImageGenerator */,
+				AB543E5B2A1A1E2700788245 /* ImageGeneratorTests */,
+				AB543E702A1A558500788245 /* ImageGeneratorUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -278,6 +400,20 @@
 			files = (
 				AB543E1B2A16585300788245 /* LaunchScreen.storyboard in Resources */,
 				AB543E182A16585300788245 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB543E5A2A1A1E2700788245 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB543E6F2A1A558500788245 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +440,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB543E582A1A1E2700788245 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB543E662A1A1FD000788245 /* MainPresenterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB543E6D2A1A558500788245 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB543E762A1A558600788245 /* ImageGeneratorUITestsLaunchTests.swift in Sources */,
+				AB543E742A1A558600788245 /* ImageGeneratorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AB543E612A1A1E2700788245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB543E0A2A16585100788245 /* ImageGenerator */;
+			targetProxy = AB543E602A1A1E2700788245 /* PBXContainerItemProxy */;
+		};
+		AB543E782A1A558600788245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB543E0A2A16585100788245 /* ImageGenerator */;
+			targetProxy = AB543E772A1A558600788245 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AB543E192A16585300788245 /* LaunchScreen.storyboard */ = {
@@ -488,6 +654,80 @@
 			};
 			name = Release;
 		};
+		AB543E632A1A1E2700788245 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.ImageGeneratorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageGenerator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ImageGenerator";
+			};
+			name = Debug;
+		};
+		AB543E642A1A1E2700788245 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.ImageGeneratorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageGenerator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ImageGenerator";
+			};
+			name = Release;
+		};
+		AB543E7A2A1A558600788245 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.ImageGeneratorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ImageGenerator;
+			};
+			name = Debug;
+		};
+		AB543E7B2A1A558600788245 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.ImageGeneratorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ImageGenerator;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -505,6 +745,24 @@
 			buildConfigurations = (
 				AB543E202A16585300788245 /* Debug */,
 				AB543E212A16585300788245 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB543E622A1A1E2700788245 /* Build configuration list for PBXNativeTarget "ImageGeneratorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB543E632A1A1E2700788245 /* Debug */,
+				AB543E642A1A1E2700788245 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB543E792A1A558600788245 /* Build configuration list for PBXNativeTarget "ImageGeneratorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB543E7A2A1A558600788245 /* Debug */,
+				AB543E7B2A1A558600788245 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

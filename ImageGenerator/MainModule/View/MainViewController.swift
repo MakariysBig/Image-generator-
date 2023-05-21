@@ -103,6 +103,9 @@ final class MainViewController: UIViewController {
         generateTextfield.delegate = self
         generateButton.addTarget(self, action: #selector(generateImageTapped), for: .touchUpInside)
         saveButton.addTarget(self, action: #selector(saveImageToFavorite), for: .touchUpInside)
+        
+        generateButton.accessibilityIdentifier = "generateButton"
+        generateTextfield.accessibilityIdentifier = "generateTextfield"
     }
     
     //MARK: - Actions

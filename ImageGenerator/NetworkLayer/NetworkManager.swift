@@ -5,7 +5,7 @@ enum NetworkErrors: Error {
     case emptyResponse
 }
 
-final class NetworkManager {
+final class NetworkManager: NetworkProtocol {
     func fetchImage(text: String, completion: @escaping (Result<UIImage, Error>) -> Void) {
         guard let url = URL(string: "https://dummyimage.com/500x500&text=\(text)") else {
             DispatchQueue.main.async {
@@ -29,4 +29,8 @@ final class NetworkManager {
         
         task.resume()
     }
+}
+
+protocol NetworkProtocol {
+    func fetchImage(text: String, completion: @escaping (Result<UIImage, Error>) -> Void)
 }
