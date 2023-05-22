@@ -23,14 +23,17 @@ final class MainPresenter: MainPresenterProtocol {
         
         if checkIfTheTextSame(oldText: lastGenerate, newText: newText) {
             lastGenerate = newText
+            VC?.startSpinner()
             networkManager?.fetchImage(text: newText ?? "") { [weak self] result in
                 guard let self = self else { return }
                 switch result {
                 case .success(let image):
                     self.VC?.updateImage(with: image)
                 case .failure(_):
-                    self.VC?.showAlert(title: "Broken image", message: "Try to make a new request")
+                    self.VC?.showAlert(title: "Broken image",
+                                       message: "Try to make a new request\nor check your internet connection")
                 }
+                VC?.stopSpinner()
             }
         }
     }
@@ -38,6 +41,7 @@ final class MainPresenter: MainPresenterProtocol {
     func addToFavorite(with image: UIImage, text: String) {
         let model = FavoriteModel(image: image, text: text)
         UserDefaultsManager.courseArray.insert(model, at: 0)
+        VC?.showAlert(title: "Success!", message: "The image was saved successfully")
         
         if UserDefaultsManager.courseArray.count > limit {
             UserDefaultsManager.courseArray.removeLast()
