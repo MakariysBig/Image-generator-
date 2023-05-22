@@ -9,6 +9,7 @@ final class MainViewController: UIViewController {
     //MARK: - Private properties
     
     private let sizeOfImage: CGFloat = 200
+    private let sizeOfSpinner: CGFloat = 50
     
     private let generateTextfield: UITextField = {
         let field = UITextField()
@@ -52,6 +53,14 @@ final class MainViewController: UIViewController {
         return button
     }()
     
+    private let spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView()
+        spinner.isHidden = true
+        spinner.color = .red
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        return spinner
+    }()
+    
     //MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -73,6 +82,7 @@ final class MainViewController: UIViewController {
 
         view.addSubview(generateTextfield)
         view.addSubview(generateImage)
+        generateImage.addSubview(spinner)
         view.addSubview(generateButton)
         view.addSubview(saveButton)
         
@@ -81,11 +91,16 @@ final class MainViewController: UIViewController {
             generateTextfield.heightAnchor.constraint(equalToConstant: 50),
             generateTextfield.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
             generateTextfield.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -14),
-       
+
             generateImage.topAnchor.constraint(equalTo: generateTextfield.bottomAnchor, constant: 20),
             generateImage.heightAnchor.constraint(equalToConstant: sizeOfImage),
             generateImage.widthAnchor.constraint(equalToConstant: sizeOfImage),
             generateImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            spinner.centerYAnchor.constraint(equalTo: generateImage.centerYAnchor),
+            spinner.centerXAnchor.constraint(equalTo: generateImage.centerXAnchor),
+            spinner.heightAnchor.constraint(equalToConstant: sizeOfSpinner),
+            spinner.widthAnchor.constraint(equalToConstant: sizeOfSpinner),
     
             generateButton.topAnchor.constraint(equalTo: generateImage.bottomAnchor, constant: 20),
             generateButton.heightAnchor.constraint(equalToConstant: 50),
@@ -106,6 +121,13 @@ final class MainViewController: UIViewController {
         
         generateButton.accessibilityIdentifier = "generateButton"
         generateTextfield.accessibilityIdentifier = "generateTextfield"
+    }
+    
+    private func createAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let actionCopy = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(actionCopy)
+        self.present(alert, animated: true, completion: nil)
     }
     
     //MARK: - Actions
@@ -134,11 +156,18 @@ extension MainViewController: UITextFieldDelegate {
 //MARK: - Extension: MainViewProtocol
 
 extension MainViewController: MainViewProtocol {
+    func startSpinner() {
+        spinner.isHidden = false
+        spinner.startAnimating()
+    }
+    
+    func stopSpinner() {
+        spinner.isHidden = true
+        spinner.stopAnimating()
+    }
+    
     func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let actionCopy = UIAlertAction(title: "Ok", style: .default)
-        alert.addAction(actionCopy)
-        self.present(alert, animated: true, completion: nil)
+        self.createAlert(title: title, message: message)
     }
     
     func updateImage(with image: UIImage) {

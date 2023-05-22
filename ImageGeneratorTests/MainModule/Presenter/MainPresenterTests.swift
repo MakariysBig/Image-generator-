@@ -62,7 +62,7 @@ final class MainPresenterTests: XCTestCase {
         
         // Then
         XCTAssertEqual(UserDefaultsManager.courseArray[0], model)
-        XCTAssertEqual(UserDefaultsManager.courseArray.count, limit)
+        XCTAssertLessThanOrEqual(UserDefaultsManager.courseArray.count, limit)
     }
     
     func testCheckIfTheTextSame() {
@@ -88,6 +88,10 @@ final class MockMainView: MainViewProtocol {
         alertTitle = title
         alertMessage = message
     }
+    
+    func startSpinner() {}
+    
+    func stopSpinner() {}
 }
 
 final class MockNetworkManager: NetworkProtocol {

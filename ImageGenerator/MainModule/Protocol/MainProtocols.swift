@@ -5,6 +5,8 @@ import UIKit
 protocol MainViewProtocol: AnyObject {
     func updateImage(with image: UIImage)
     func showAlert(title: String, message: String)
+    func startSpinner()
+    func stopSpinner()
 }
 
 //MARK: - Presenter
